@@ -2,12 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--Permissions:-->
-    <!--Internet Permission:-->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--Location Permissions:-->
+    <!-- Permissions: -->
+    <!-- Internet Permission: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Location Permissions: -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Optional Nearby Devices Permission for Android 13 and above -->
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" tools:targetApi="33" />
 
     <application
         android:allowBackup="true"
@@ -19,15 +23,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.COMP3606_A2_816024202_Pub_App"
         tools:targetApi="31">
+
+        <!-- PermissionActivity is the Launcher Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".PermissionActivity"
+            android:exported="true"
+            android:theme="@style/Theme.COMP3606_A2_816024202_Pub_App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.COMP3606_A2_816024202_Pub_App" />
+
+        <!-- Google Play Services Meta-data -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
 </manifest>
