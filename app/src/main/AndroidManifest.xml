@@ -5,6 +5,7 @@
     <!-- Permissions: -->
     <!-- Internet Permission: -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" tools:targetApi="33" />
 
     <!-- Location Permissions: -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
