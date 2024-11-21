@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    packagingOptions { resources.excludes.add("META-INF/*") }
     namespace = "com.example.comp3606_a2_816024202_pub_app"
     compileSdk = 34
 
@@ -37,6 +38,8 @@ android {
 
 dependencies {
 
+    //implementation(libs.hivemq.mqtt.client)
+    implementation("com.hivemq:hivemq-mqtt-client:1.3.3")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
